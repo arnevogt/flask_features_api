@@ -1,0 +1,1360 @@
+{
+	"type": "FeatureCollection",
+	"timeStamp": "2021-04-30T06:19:38-04:00",
+	"numberMatched": 8,
+	"numberReturned": 8,
+	"crs": {
+		"type": "name",
+		"properties": {
+			"name": "urn:ogc:def:crs:OGC::CRS84"
+		}
+	},
+	"bbox": [
+		36.0161242,
+		32.5970476,
+		36.1216354,
+		32.7348462
+	],
+	"links": [
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items",
+			"rel": "self",
+			"type": "application/geo+json"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/schema",
+			"rel": "describedby",
+			"type": "application/xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fgml%2Bxml",
+			"rel": "alternate",
+			"type": "application/gml+xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fx-bxfs%2Bxml%3B%20version%3D1.0.0",
+			"rel": "alternate",
+			"type": "application/x-bxfs+xml; version=1.0.0"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fgml%2Bxml%3B%20version%3D2.1",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=2.1"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fgml%2Bxml%3B%20version%3D3.1",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=3.1"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fgml%2Bxml%3B%20version%3D3.2",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=3.2"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fgml%2Bxml%3B%20version%3D3.2%3B%20profile%3Dhttp%3A%2F%2Fwww.opengis.net%2Fdef%2Fprofile%2Fogc%2F2.0%2Fgml-sf0",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=3.2; profile=http://www.opengis.net/def/profile/ogc/2.0/gml-sf0"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fgml%2Bxml%3B%20version%3D3.2%3B%20profile%3Dhttp%3A%2F%2Fwww.opengis.net%2Fdef%2Fprofile%2Fogc%2F2.0%2Fgml-sf1",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=3.2; profile=http://www.opengis.net/def/profile/ogc/2.0/gml-sf1"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Frss%2Bxml",
+			"rel": "alternate",
+			"type": "application/rss+xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fatom%2Bxml",
+			"rel": "alternate",
+			"type": "application/atom+xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fvnd.google-earth.kml%2Bxml",
+			"rel": "alternate",
+			"type": "application/vnd.google-earth.kml+xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fvnd.google-earth.kmz",
+			"rel": "alternate",
+			"type": "application/vnd.google-earth.kmz"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=text%2Fhtml",
+			"rel": "alternate",
+			"type": "text/html"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fofgj%2Bjson",
+			"rel": "alternate",
+			"type": "application/ofgj+json"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=application%2Fvnd.shp%2Boctet-stream",
+			"rel": "alternate",
+			"type": "application/vnd.shp+octet-stream"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=text%2Fjson",
+			"rel": "alternate",
+			"type": "text/json"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items?f=text%2Fxml",
+			"rel": "alternate",
+			"type": "text/xml"
+		}
+	],
+	"features": [
+		{
+			"type": "Feature",
+			"id": "CWFID.VEGETATIONSRF.0.1",
+			"geometry": {
+				"type": "Polygon",
+				"coordinates": [
+					[
+						[
+							36.0892655,
+							32.605791
+						],
+						[
+							36.0894038,
+							32.6060077
+						],
+						[
+							36.0897662,
+							32.6060985
+						],
+						[
+							36.0894702,
+							32.6074546
+						],
+						[
+							36.0891494,
+							32.6073871
+						],
+						[
+							36.0878355,
+							32.607175
+						],
+						[
+							36.0880042,
+							32.6068605
+						],
+						[
+							36.0882587,
+							32.6065599
+						],
+						[
+							36.0883721,
+							32.6061475
+						],
+						[
+							36.0888064,
+							32.6061358
+						],
+						[
+							36.0889696,
+							32.605798
+						],
+						[
+							36.0892655,
+							32.605791
+						]
+					]
+				]
+			},
+			"properties": {
+				"ARA": -999999,
+				"CCN": "No Information",
+				"CDR": "No Information",
+				"F_CODE": "EC015",
+				"LZN": -999999,
+				"OTH": "noInformation",
+				"SAX_RS1": "No Information",
+				"SAX_RS2": "No Information",
+				"SAX_RS3": "noInformation",
+				"SAX_RS4": "noInformation",
+				"SAX_RS5": "No Information",
+				"SAX_RS6": "noInformation",
+				"SAX_RS8": "No Information",
+				"SAX_RS9": "No Information",
+				"SAX_RX1": "noInformation",
+				"SAX_RX2": "noInformation",
+				"SAX_RX5": "noInformation",
+				"SAX_RX6": "noInformation",
+				"SAX_RX7": "noInformation",
+				"SAX_RX8": "noInformation",
+				"SAX_RX9": "No Information",
+				"SAX_RY0": "No Information",
+				"SAX_RY1": "noInformation",
+				"SAX_RY2": "noInformation",
+				"UFI": "f90e2b8c-f562-4b0b-a4c7-6f0386a13ebe",
+				"VTI": -999999,
+				"WID": -999999,
+				"ZI001_SDP": "No Information",
+				"ZI001_SDV": "2011-01-08T14:36:31Z",
+				"ZI001_SPS": -999999,
+				"ZI001_SRT": "noInformation",
+				"ZI001_VSC": "noInformation",
+				"ZI001_VSD": "noInformation",
+				"ZI001_VSN": "No Information",
+				"ZI004_RCG": "noInformation",
+				"ZI005_FNA": "No Information",
+				"ZI005_NFN": "No Information",
+				"ZI006_MEM": "No Information",
+				"ZI020_GE4": "noInformation",
+				"ZI026_CTUC": 5,
+				"ZI026_CTUL": -999999,
+				"ZI026_CTUU": -999999,
+				"ZSAX_RS0": "noInformation",
+				"ZSAX_RX0": "noInformation",
+				"ZSAX_RX3": "noInformation",
+				"ZSAX_RX4": "noInformation",
+				"FCSUBTYPE": 130380,
+				"AOO": -999999,
+				"HGT": -999999,
+				"LMC": -999999,
+				"PVH": -999999,
+				"ZVH": -999999,
+				"DMBC": 5,
+				"DMBL": -999999,
+				"DMBU": -999999,
+				"DMT": -999999,
+				"SBC": -999999,
+				"SDSC": 5,
+				"SDSL": -999999,
+				"SDSU": -999999,
+				"TRE": -999999,
+				"TSCC": 5,
+				"TSCL": -999999,
+				"TSCU": -999999
+			}
+		},
+		{
+			"type": "Feature",
+			"id": "CWFID.VEGETATIONSRF.0.2",
+			"geometry": {
+				"type": "Polygon",
+				"coordinates": [
+					[
+						[
+							36.1119783,
+							32.599852
+						],
+						[
+							36.1121774,
+							32.5998992
+						],
+						[
+							36.112429,
+							32.5978707
+						],
+						[
+							36.112547,
+							32.5979224
+						],
+						[
+							36.1124218,
+							32.5993591
+						],
+						[
+							36.1123808,
+							32.600815
+						],
+						[
+							36.1111958,
+							32.6012376
+						],
+						[
+							36.1120392,
+							32.6038704
+						],
+						[
+							36.1113129,
+							32.6035191
+						],
+						[
+							36.1097011,
+							32.6041783
+						],
+						[
+							36.1086421,
+							32.604277
+						],
+						[
+							36.1068475,
+							32.6042178
+						],
+						[
+							36.1065383,
+							32.6034007
+						],
+						[
+							36.1072317,
+							32.6027731
+						],
+						[
+							36.1090263,
+							32.6021257
+						],
+						[
+							36.1094902,
+							32.6017468
+						],
+						[
+							36.1093918,
+							32.6010481
+						],
+						[
+							36.1092466,
+							32.6007402
+						],
+						[
+							36.1092184,
+							32.6006889
+						],
+						[
+							36.1107038,
+							32.6001836
+						],
+						[
+							36.1119783,
+							32.599852
+						]
+					]
+				]
+			},
+			"properties": {
+				"ARA": -999999,
+				"CCN": "No Information",
+				"CDR": "No Information",
+				"F_CODE": "EC015",
+				"LZN": -999999,
+				"OTH": "noInformation",
+				"SAX_RS1": "No Information",
+				"SAX_RS2": "No Information",
+				"SAX_RS3": "noInformation",
+				"SAX_RS4": "noInformation",
+				"SAX_RS5": "No Information",
+				"SAX_RS6": "noInformation",
+				"SAX_RS8": "No Information",
+				"SAX_RS9": "No Information",
+				"SAX_RX1": "noInformation",
+				"SAX_RX2": "noInformation",
+				"SAX_RX5": "noInformation",
+				"SAX_RX6": "noInformation",
+				"SAX_RX7": "noInformation",
+				"SAX_RX8": "noInformation",
+				"SAX_RX9": "No Information",
+				"SAX_RY0": "No Information",
+				"SAX_RY1": "noInformation",
+				"SAX_RY2": "noInformation",
+				"UFI": "c5d39858-3777-4592-aca7-3c0c301c4509",
+				"VTI": -999999,
+				"WID": -999999,
+				"ZI001_SDP": "No Information",
+				"ZI001_SDV": "2011-12-30T19:26:02Z",
+				"ZI001_SPS": -999999,
+				"ZI001_SRT": "noInformation",
+				"ZI001_VSC": "noInformation",
+				"ZI001_VSD": "noInformation",
+				"ZI001_VSN": "No Information",
+				"ZI004_RCG": "noInformation",
+				"ZI005_FNA": "No Information",
+				"ZI005_NFN": "No Information",
+				"ZI006_MEM": "No Information",
+				"ZI020_GE4": "noInformation",
+				"ZI026_CTUC": 5,
+				"ZI026_CTUL": -999999,
+				"ZI026_CTUU": -999999,
+				"ZSAX_RS0": "noInformation",
+				"ZSAX_RX0": "noInformation",
+				"ZSAX_RX3": "noInformation",
+				"ZSAX_RX4": "noInformation",
+				"FCSUBTYPE": 130380,
+				"AOO": -999999,
+				"HGT": -999999,
+				"LMC": -999999,
+				"PVH": -999999,
+				"ZVH": -999999,
+				"DMBC": 5,
+				"DMBL": -999999,
+				"DMBU": -999999,
+				"DMT": -999999,
+				"SBC": -999999,
+				"SDSC": 5,
+				"SDSL": -999999,
+				"SDSU": -999999,
+				"TRE": -999999,
+				"TSCC": 5,
+				"TSCL": -999999,
+				"TSCU": -999999
+			}
+		},
+		{
+			"type": "Feature",
+			"id": "CWFID.VEGETATIONSRF.0.3",
+			"geometry": {
+				"type": "Polygon",
+				"coordinates": [
+					[
+						[
+							36.1168237,
+							32.6023948
+						],
+						[
+							36.1173744,
+							32.6028218
+						],
+						[
+							36.1178108,
+							32.6031451
+						],
+						[
+							36.1190467,
+							32.6036898
+						],
+						[
+							36.1200189,
+							32.603622
+						],
+						[
+							36.1203434,
+							32.603038
+						],
+						[
+							36.1203846,
+							32.6027022
+						],
+						[
+							36.1204742,
+							32.6023586
+						],
+						[
+							36.1207649,
+							32.6016484
+						],
+						[
+							36.1209676,
+							32.6013363
+						],
+						[
+							36.121191,
+							32.6009228
+						],
+						[
+							36.1210323,
+							32.6005035
+						],
+						[
+							36.120388,
+							32.5988751
+						],
+						[
+							36.120025,
+							32.5980426
+						],
+						[
+							36.119809,
+							32.5976157
+						],
+						[
+							36.1195047,
+							32.5972123
+						],
+						[
+							36.1197366,
+							32.5970476
+						],
+						[
+							36.1206171,
+							32.5989716
+						],
+						[
+							36.1207924,
+							32.5994676
+						],
+						[
+							36.121049,
+							32.5996143
+						],
+						[
+							36.1213697,
+							32.6002396
+						],
+						[
+							36.1216354,
+							32.6008379
+						],
+						[
+							36.1214977,
+							32.6014624
+						],
+						[
+							36.1210252,
+							32.6018846
+						],
+						[
+							36.1202663,
+							32.603911
+						],
+						[
+							36.1196607,
+							32.6040299
+						],
+						[
+							36.1187415,
+							32.6039035
+						],
+						[
+							36.1175688,
+							32.6037636
+						],
+						[
+							36.116458,
+							32.6033506
+						],
+						[
+							36.1153951,
+							32.603146
+						],
+						[
+							36.1143138,
+							32.6031538
+						],
+						[
+							36.1132935,
+							32.6032474
+						],
+						[
+							36.1130859,
+							32.6028681
+						],
+						[
+							36.1128376,
+							32.6025212
+						],
+						[
+							36.114268,
+							32.6021092
+						],
+						[
+							36.114552,
+							32.601687
+						],
+						[
+							36.1148957,
+							32.6014516
+						],
+						[
+							36.1154898,
+							32.6015228
+						],
+						[
+							36.1168237,
+							32.6023948
+						]
+					]
+				]
+			},
+			"properties": {
+				"ARA": -999999,
+				"CCN": "No Information",
+				"CDR": "No Information",
+				"F_CODE": "EB070",
+				"LZN": -999999,
+				"OTH": "noInformation",
+				"SAX_RS1": "No Information",
+				"SAX_RS2": "No Information",
+				"SAX_RS3": "noInformation",
+				"SAX_RS4": "noInformation",
+				"SAX_RS5": "No Information",
+				"SAX_RS6": "noInformation",
+				"SAX_RS8": "No Information",
+				"SAX_RS9": "No Information",
+				"SAX_RX1": "noInformation",
+				"SAX_RX2": "noInformation",
+				"SAX_RX5": "noInformation",
+				"SAX_RX6": "noInformation",
+				"SAX_RX7": "noInformation",
+				"SAX_RX8": "noInformation",
+				"SAX_RX9": "No Information",
+				"SAX_RY0": "No Information",
+				"SAX_RY1": "noInformation",
+				"SAX_RY2": "noInformation",
+				"UFI": "180fd39d-c82c-450c-9b3f-e03ac03f3017",
+				"WID": -999999,
+				"ZI001_SDP": "No Information",
+				"ZI001_SDV": "2011-01-03T12:31:00Z",
+				"ZI001_SPS": -999999,
+				"ZI001_SRT": "noInformation",
+				"ZI001_VSC": "noInformation",
+				"ZI001_VSD": "noInformation",
+				"ZI001_VSN": "No Information",
+				"ZI004_RCG": "noInformation",
+				"ZI006_MEM": "No Information",
+				"ZI020_GE4": "noInformation",
+				"ZI026_CTUC": 5,
+				"ZI026_CTUL": -999999,
+				"ZI026_CTUU": -999999,
+				"ZSAX_RS0": "noInformation",
+				"ZSAX_RX0": "noInformation",
+				"ZSAX_RX3": "noInformation",
+				"ZSAX_RX4": "noInformation",
+				"FCSUBTYPE": 100390,
+				"AOO": -999999,
+				"HGT": -999999,
+				"LMC": -999999,
+				"PVH": -999999,
+				"ZVH": -999999
+			}
+		},
+		{
+			"type": "Feature",
+			"id": "CWFID.VEGETATIONSRF.0.4",
+			"geometry": {
+				"type": "Polygon",
+				"coordinates": [
+					[
+						[
+							36.0832432,
+							32.6283697
+						],
+						[
+							36.0844878,
+							32.6281077
+						],
+						[
+							36.0860011,
+							32.6268269
+						],
+						[
+							36.0862473,
+							32.6268427
+						],
+						[
+							36.0858831,
+							32.6274684
+						],
+						[
+							36.086022,
+							32.6278456
+						],
+						[
+							36.0857967,
+							32.628198
+						],
+						[
+							36.0849926,
+							32.628643
+						],
+						[
+							36.0846702,
+							32.6284601
+						],
+						[
+							36.0839835,
+							32.628433
+						],
+						[
+							36.084005,
+							32.628957
+						],
+						[
+							36.0835222,
+							32.6290564
+						],
+						[
+							36.0829643,
+							32.6293907
+						],
+						[
+							36.0821489,
+							32.6297702
+						],
+						[
+							36.0816017,
+							32.629969
+						],
+						[
+							36.0804216,
+							32.629969
+						],
+						[
+							36.0798422,
+							32.6296708
+						],
+						[
+							36.0797564,
+							32.6291829
+						],
+						[
+							36.0798529,
+							32.6287673
+						],
+						[
+							36.0803786,
+							32.6284149
+						],
+						[
+							36.0808293,
+							32.6282161
+						],
+						[
+							36.081613,
+							32.6281461
+						],
+						[
+							36.0823855,
+							32.6282364
+						],
+						[
+							36.0832432,
+							32.6283697
+						]
+					]
+				]
+			},
+			"properties": {
+				"ARA": -999999,
+				"CCN": "No Information",
+				"CDR": "No Information",
+				"F_CODE": "EC015",
+				"LZN": -999999,
+				"OTH": "noInformation",
+				"SAX_RS1": "No Information",
+				"SAX_RS2": "No Information",
+				"SAX_RS3": "noInformation",
+				"SAX_RS4": "noInformation",
+				"SAX_RS5": "No Information",
+				"SAX_RS6": "noInformation",
+				"SAX_RS8": "No Information",
+				"SAX_RS9": "No Information",
+				"SAX_RX1": "noInformation",
+				"SAX_RX2": "noInformation",
+				"SAX_RX5": "noInformation",
+				"SAX_RX6": "noInformation",
+				"SAX_RX7": "noInformation",
+				"SAX_RX8": "noInformation",
+				"SAX_RX9": "No Information",
+				"SAX_RY0": "No Information",
+				"SAX_RY1": "noInformation",
+				"SAX_RY2": "noInformation",
+				"UFI": "bb5ae542-dd89-4c05-ae6c-2a4f275e3503",
+				"VTI": -999999,
+				"WID": -999999,
+				"ZI001_SDP": "No Information",
+				"ZI001_SDV": "2011-12-31T12:20:21Z",
+				"ZI001_SPS": -999999,
+				"ZI001_SRT": "noInformation",
+				"ZI001_VSC": "noInformation",
+				"ZI001_VSD": "noInformation",
+				"ZI001_VSN": "No Information",
+				"ZI004_RCG": "noInformation",
+				"ZI005_FNA": "No Information",
+				"ZI005_NFN": "No Information",
+				"ZI006_MEM": "No Information",
+				"ZI020_GE4": "noInformation",
+				"ZI026_CTUC": 5,
+				"ZI026_CTUL": -999999,
+				"ZI026_CTUU": -999999,
+				"ZSAX_RS0": "noInformation",
+				"ZSAX_RX0": "noInformation",
+				"ZSAX_RX3": "noInformation",
+				"ZSAX_RX4": "noInformation",
+				"FCSUBTYPE": 130380,
+				"AOO": -999999,
+				"HGT": -999999,
+				"LMC": -999999,
+				"PVH": -999999,
+				"ZVH": -999999,
+				"DMBC": 5,
+				"DMBL": -999999,
+				"DMBU": -999999,
+				"DMT": -999999,
+				"SBC": -999999,
+				"SDSC": 5,
+				"SDSL": -999999,
+				"SDSU": -999999,
+				"TRE": -999999,
+				"TSCC": 5,
+				"TSCL": -999999,
+				"TSCU": -999999
+			}
+		},
+		{
+			"type": "Feature",
+			"id": "CWFID.VEGETATIONSRF.0.5",
+			"geometry": {
+				"type": "Polygon",
+				"coordinates": [
+					[
+						[
+							36.0413578,
+							32.688446
+						],
+						[
+							36.0444369,
+							32.6842742
+						],
+						[
+							36.0462077,
+							32.6818916
+						],
+						[
+							36.0468407,
+							32.6812144
+						],
+						[
+							36.0469373,
+							32.6816659
+						],
+						[
+							36.0450485,
+							32.6843013
+						],
+						[
+							36.0431285,
+							32.6867317
+						],
+						[
+							36.0415827,
+							32.6887735
+						],
+						[
+							36.0413578,
+							32.688446
+						]
+					]
+				]
+			},
+			"properties": {
+				"ARA": -999999,
+				"CCN": "No Information",
+				"CDR": "No Information",
+				"F_CODE": "EC015",
+				"LZN": -999999,
+				"OTH": "noInformation",
+				"SAX_RS1": "No Information",
+				"SAX_RS2": "No Information",
+				"SAX_RS3": "noInformation",
+				"SAX_RS4": "noInformation",
+				"SAX_RS5": "No Information",
+				"SAX_RS6": "noInformation",
+				"SAX_RS8": "No Information",
+				"SAX_RS9": "No Information",
+				"SAX_RX1": "noInformation",
+				"SAX_RX2": "noInformation",
+				"SAX_RX5": "noInformation",
+				"SAX_RX6": "noInformation",
+				"SAX_RX7": "noInformation",
+				"SAX_RX8": "noInformation",
+				"SAX_RX9": "No Information",
+				"SAX_RY0": "No Information",
+				"SAX_RY1": "noInformation",
+				"SAX_RY2": "noInformation",
+				"UFI": "cb96c5fc-6717-4342-af81-861ca6040681",
+				"VTI": -999999,
+				"WID": -999999,
+				"ZI001_SDP": "No Information",
+				"ZI001_SDV": "2013-06-15T20:06:08Z",
+				"ZI001_SPS": -999999,
+				"ZI001_SRT": "noInformation",
+				"ZI001_VSC": "noInformation",
+				"ZI001_VSD": "noInformation",
+				"ZI001_VSN": "No Information",
+				"ZI004_RCG": "noInformation",
+				"ZI005_FNA": "No Information",
+				"ZI005_NFN": "No Information",
+				"ZI006_MEM": "No Information",
+				"ZI020_GE4": "noInformation",
+				"ZI026_CTUC": 5,
+				"ZI026_CTUL": -999999,
+				"ZI026_CTUU": -999999,
+				"ZSAX_RS0": "noInformation",
+				"ZSAX_RX0": "noInformation",
+				"ZSAX_RX3": "noInformation",
+				"ZSAX_RX4": "noInformation",
+				"FCSUBTYPE": 130380,
+				"AOO": -999999,
+				"HGT": -999999,
+				"LMC": -999999,
+				"PVH": -999999,
+				"ZVH": -999999,
+				"DMBC": 5,
+				"DMBL": -999999,
+				"DMBU": -999999,
+				"DMT": -999999,
+				"SBC": -999999,
+				"SDSC": 5,
+				"SDSL": -999999,
+				"SDSU": -999999,
+				"TRE": -999999,
+				"TSCC": 5,
+				"TSCL": -999999,
+				"TSCU": -999999
+			}
+		},
+		{
+			"type": "Feature",
+			"id": "CWFID.VEGETATIONSRF.0.6",
+			"geometry": {
+				"type": "Polygon",
+				"coordinates": [
+					[
+						[
+							36.0410466,
+							32.6887982
+						],
+						[
+							36.0414441,
+							32.6890794
+						],
+						[
+							36.0405424,
+							32.6902971
+						],
+						[
+							36.0403922,
+							32.6902609
+						],
+						[
+							36.0401561,
+							32.6906311
+						],
+						[
+							36.0407575,
+							32.6912555
+						],
+						[
+							36.039094,
+							32.6926898
+						],
+						[
+							36.0382249,
+							32.6934754
+						],
+						[
+							36.0391696,
+							32.6942893
+						],
+						[
+							36.0386004,
+							32.6947214
+						],
+						[
+							36.0380211,
+							32.6944234
+						],
+						[
+							36.0374417,
+							32.694288
+						],
+						[
+							36.0368195,
+							32.6950464
+						],
+						[
+							36.035929,
+							32.6963646
+						],
+						[
+							36.0359933,
+							32.6965181
+						],
+						[
+							36.0339232,
+							32.6991017
+						],
+						[
+							36.0337837,
+							32.6990385
+						],
+						[
+							36.0329683,
+							32.7000948
+						],
+						[
+							36.0331507,
+							32.7002031
+						],
+						[
+							36.0327323,
+							32.7006997
+						],
+						[
+							36.0322602,
+							32.7004469
+						],
+						[
+							36.0347493,
+							32.6972418
+						],
+						[
+							36.0355218,
+							32.6961764
+						],
+						[
+							36.0369058,
+							32.6942803
+						],
+						[
+							36.0379031,
+							32.6929336
+						],
+						[
+							36.0396095,
+							32.6906686
+						],
+						[
+							36.0398128,
+							32.6906402
+						],
+						[
+							36.0402318,
+							32.6900907
+						],
+						[
+							36.0401239,
+							32.689963
+						],
+						[
+							36.0410466,
+							32.6887982
+						]
+					]
+				]
+			},
+			"properties": {
+				"ARA": -999999,
+				"CCN": "No Information",
+				"CDR": "No Information",
+				"F_CODE": "EC015",
+				"LZN": -999999,
+				"OTH": "noInformation",
+				"SAX_RS1": "No Information",
+				"SAX_RS2": "No Information",
+				"SAX_RS3": "noInformation",
+				"SAX_RS4": "noInformation",
+				"SAX_RS5": "No Information",
+				"SAX_RS6": "noInformation",
+				"SAX_RS8": "No Information",
+				"SAX_RS9": "No Information",
+				"SAX_RX1": "noInformation",
+				"SAX_RX2": "noInformation",
+				"SAX_RX5": "noInformation",
+				"SAX_RX6": "noInformation",
+				"SAX_RX7": "noInformation",
+				"SAX_RX8": "noInformation",
+				"SAX_RX9": "No Information",
+				"SAX_RY0": "No Information",
+				"SAX_RY1": "noInformation",
+				"SAX_RY2": "noInformation",
+				"UFI": "d9a0adf3-732e-4197-ad59-43f012bc0162",
+				"VTI": -999999,
+				"WID": -999999,
+				"ZI001_SDP": "No Information",
+				"ZI001_SDV": "2011-12-31T13:39:05Z",
+				"ZI001_SPS": -999999,
+				"ZI001_SRT": "noInformation",
+				"ZI001_VSC": "noInformation",
+				"ZI001_VSD": "noInformation",
+				"ZI001_VSN": "No Information",
+				"ZI004_RCG": "noInformation",
+				"ZI005_FNA": "No Information",
+				"ZI005_NFN": "No Information",
+				"ZI006_MEM": "No Information",
+				"ZI020_GE4": "noInformation",
+				"ZI026_CTUC": 5,
+				"ZI026_CTUL": -999999,
+				"ZI026_CTUU": -999999,
+				"ZSAX_RS0": "noInformation",
+				"ZSAX_RX0": "noInformation",
+				"ZSAX_RX3": "noInformation",
+				"ZSAX_RX4": "noInformation",
+				"FCSUBTYPE": 130380,
+				"AOO": -999999,
+				"HGT": -999999,
+				"LMC": -999999,
+				"PVH": -999999,
+				"ZVH": -999999,
+				"DMBC": 5,
+				"DMBL": -999999,
+				"DMBU": -999999,
+				"DMT": -999999,
+				"SBC": -999999,
+				"SDSC": 5,
+				"SDSL": -999999,
+				"SDSU": -999999,
+				"TRE": -999999,
+				"TSCC": 5,
+				"TSCL": -999999,
+				"TSCU": -999999
+			}
+		},
+		{
+			"type": "Feature",
+			"id": "CWFID.VEGETATIONSRF.0.7",
+			"geometry": {
+				"type": "Polygon",
+				"coordinates": [
+					[
+						[
+							36.016768,
+							32.7037672
+						],
+						[
+							36.0165534,
+							32.7037131
+						],
+						[
+							36.0161242,
+							32.7030992
+						],
+						[
+							36.0164246,
+							32.7028103
+						],
+						[
+							36.0166607,
+							32.7033519
+						],
+						[
+							36.0171971,
+							32.7032075
+						],
+						[
+							36.0173012,
+							32.7028157
+						],
+						[
+							36.0170469,
+							32.7022505
+						],
+						[
+							36.0168538,
+							32.7017991
+						],
+						[
+							36.0172368,
+							32.7015156
+						],
+						[
+							36.0175619,
+							32.7017991
+						],
+						[
+							36.0183741,
+							32.7027976
+						],
+						[
+							36.0189137,
+							32.70272
+						],
+						[
+							36.0196218,
+							32.7023408
+						],
+						[
+							36.0196218,
+							32.7019616
+						],
+						[
+							36.0205016,
+							32.701763
+						],
+						[
+							36.0215284,
+							32.7025087
+						],
+						[
+							36.0212065,
+							32.7027976
+						],
+						[
+							36.0202194,
+							32.7028518
+						],
+						[
+							36.0195789,
+							32.7031353
+						],
+						[
+							36.0174332,
+							32.7038756
+						],
+						[
+							36.016768,
+							32.7037672
+						]
+					]
+				]
+			},
+			"properties": {
+				"ARA": -999999,
+				"CCN": "No Information",
+				"CDR": "No Information",
+				"F_CODE": "EC015",
+				"LZN": -999999,
+				"OTH": "noInformation",
+				"SAX_RS1": "No Information",
+				"SAX_RS2": "No Information",
+				"SAX_RS3": "noInformation",
+				"SAX_RS4": "noInformation",
+				"SAX_RS5": "No Information",
+				"SAX_RS6": "noInformation",
+				"SAX_RS8": "No Information",
+				"SAX_RS9": "No Information",
+				"SAX_RX1": "noInformation",
+				"SAX_RX2": "noInformation",
+				"SAX_RX5": "noInformation",
+				"SAX_RX6": "noInformation",
+				"SAX_RX7": "noInformation",
+				"SAX_RX8": "noInformation",
+				"SAX_RX9": "No Information",
+				"SAX_RY0": "No Information",
+				"SAX_RY1": "noInformation",
+				"SAX_RY2": "noInformation",
+				"UFI": "3b3c3fe6-ed16-4c89-90d7-00ce346c419c",
+				"VTI": -999999,
+				"WID": -999999,
+				"ZI001_SDP": "No Information",
+				"ZI001_SDV": "2013-01-28T19:51:24Z",
+				"ZI001_SPS": -999999,
+				"ZI001_SRT": "noInformation",
+				"ZI001_VSC": "noInformation",
+				"ZI001_VSD": "noInformation",
+				"ZI001_VSN": "No Information",
+				"ZI004_RCG": "noInformation",
+				"ZI005_FNA": "No Information",
+				"ZI005_NFN": "No Information",
+				"ZI006_MEM": "No Information",
+				"ZI020_GE4": "noInformation",
+				"ZI026_CTUC": 5,
+				"ZI026_CTUL": -999999,
+				"ZI026_CTUU": -999999,
+				"ZSAX_RS0": "noInformation",
+				"ZSAX_RX0": "noInformation",
+				"ZSAX_RX3": "noInformation",
+				"ZSAX_RX4": "noInformation",
+				"FCSUBTYPE": 130380,
+				"AOO": -999999,
+				"HGT": -999999,
+				"LMC": -999999,
+				"PVH": -999999,
+				"ZVH": -999999,
+				"DMBC": 5,
+				"DMBL": -999999,
+				"DMBU": -999999,
+				"DMT": -999999,
+				"SBC": -999999,
+				"SDSC": 5,
+				"SDSL": -999999,
+				"SDSU": -999999,
+				"TRE": -999999,
+				"TSCC": 5,
+				"TSCL": -999999,
+				"TSCU": -999999
+			}
+		},
+		{
+			"type": "Feature",
+			"id": "CWFID.VEGETATIONSRF.0.8",
+			"geometry": {
+				"type": "Polygon",
+				"coordinates": [
+					[
+						[
+							36.0710388,
+							32.7339257
+						],
+						[
+							36.0713284,
+							32.734043
+						],
+						[
+							36.071822,
+							32.7342054
+						],
+						[
+							36.0715001,
+							32.7348462
+						],
+						[
+							36.0710549,
+							32.7348282
+						],
+						[
+							36.0709047,
+							32.7345348
+						],
+						[
+							36.0708725,
+							32.7341242
+						],
+						[
+							36.0710388,
+							32.7339257
+						]
+					]
+				]
+			},
+			"properties": {
+				"ARA": -999999,
+				"CCN": "No Information",
+				"CDR": "No Information",
+				"F_CODE": "EB010",
+				"LZN": -999999,
+				"OTH": "noInformation",
+				"SAX_RS1": "No Information",
+				"SAX_RS2": "No Information",
+				"SAX_RS3": "noInformation",
+				"SAX_RS4": "noInformation",
+				"SAX_RS5": "No Information",
+				"SAX_RS6": "noInformation",
+				"SAX_RS8": "No Information",
+				"SAX_RS9": "No Information",
+				"SAX_RX1": "noInformation",
+				"SAX_RX2": "noInformation",
+				"SAX_RX5": "noInformation",
+				"SAX_RX6": "noInformation",
+				"SAX_RX7": "noInformation",
+				"SAX_RX8": "noInformation",
+				"SAX_RX9": "No Information",
+				"SAX_RY0": "No Information",
+				"SAX_RY1": "noInformation",
+				"SAX_RY2": "noInformation",
+				"UFI": "c675a6c8-8ba9-4134-b60d-489ec8085a74",
+				"VTI": -999999,
+				"WID": -999999,
+				"ZI001_SDP": "No Information",
+				"ZI001_SDV": "2011-03-03T16:35:35Z",
+				"ZI001_SPS": -999999,
+				"ZI001_SRT": "noInformation",
+				"ZI001_VSC": "noInformation",
+				"ZI001_VSD": "noInformation",
+				"ZI001_VSN": "No Information",
+				"ZI004_RCG": "noInformation",
+				"ZI005_FNA": "No Information",
+				"ZI005_NFN": "No Information",
+				"ZI006_MEM": "No Information",
+				"ZI020_GE4": "noInformation",
+				"ZI026_CTUC": 5,
+				"ZI026_CTUL": -999999,
+				"ZI026_CTUU": -999999,
+				"ZSAX_RS0": "noInformation",
+				"ZSAX_RX0": "noInformation",
+				"ZSAX_RX3": "noInformation",
+				"ZSAX_RX4": "noInformation",
+				"FCSUBTYPE": 100387,
+				"FFN": -999999,
+				"FFN2": -999999,
+				"FFN3": -999999,
+				"VEG": 8
+			}
+		}
+	]
+}

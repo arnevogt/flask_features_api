@@ -1,0 +1,224 @@
+{
+	"type": "Feature",
+	"id": "CWFID.VEGETATIONSRF.0.1",
+	"geometry": {
+		"type": "Polygon",
+		"coordinates": [
+			[
+				[
+					36.0892655,
+					32.605791
+				],
+				[
+					36.0894038,
+					32.6060077
+				],
+				[
+					36.0897662,
+					32.6060985
+				],
+				[
+					36.0894702,
+					32.6074546
+				],
+				[
+					36.0891494,
+					32.6073871
+				],
+				[
+					36.0878355,
+					32.607175
+				],
+				[
+					36.0880042,
+					32.6068605
+				],
+				[
+					36.0882587,
+					32.6065599
+				],
+				[
+					36.0883721,
+					32.6061475
+				],
+				[
+					36.0888064,
+					32.6061358
+				],
+				[
+					36.0889696,
+					32.605798
+				],
+				[
+					36.0892655,
+					32.605791
+				]
+			]
+		]
+	},
+	"properties": {
+		"ARA": -999999,
+		"CCN": "No Information",
+		"CDR": "No Information",
+		"F_CODE": "EC015",
+		"LZN": -999999,
+		"OTH": "noInformation",
+		"SAX_RS1": "No Information",
+		"SAX_RS2": "No Information",
+		"SAX_RS3": "noInformation",
+		"SAX_RS4": "noInformation",
+		"SAX_RS5": "No Information",
+		"SAX_RS6": "noInformation",
+		"SAX_RS8": "No Information",
+		"SAX_RS9": "No Information",
+		"SAX_RX1": "noInformation",
+		"SAX_RX2": "noInformation",
+		"SAX_RX5": "noInformation",
+		"SAX_RX6": "noInformation",
+		"SAX_RX7": "noInformation",
+		"SAX_RX8": "noInformation",
+		"SAX_RX9": "No Information",
+		"SAX_RY0": "No Information",
+		"SAX_RY1": "noInformation",
+		"SAX_RY2": "noInformation",
+		"UFI": "f90e2b8c-f562-4b0b-a4c7-6f0386a13ebe",
+		"VTI": -999999,
+		"WID": -999999,
+		"ZI001_SDP": "No Information",
+		"ZI001_SDV": "2011-01-08T14:36:31Z",
+		"ZI001_SPS": -999999,
+		"ZI001_SRT": "noInformation",
+		"ZI001_VSC": "noInformation",
+		"ZI001_VSD": "noInformation",
+		"ZI001_VSN": "No Information",
+		"ZI004_RCG": "noInformation",
+		"ZI005_FNA": "No Information",
+		"ZI005_NFN": "No Information",
+		"ZI006_MEM": "No Information",
+		"ZI020_GE4": "noInformation",
+		"ZI026_CTUC": 5,
+		"ZI026_CTUL": -999999,
+		"ZI026_CTUU": -999999,
+		"ZSAX_RS0": "noInformation",
+		"ZSAX_RX0": "noInformation",
+		"ZSAX_RX3": "noInformation",
+		"ZSAX_RX4": "noInformation",
+		"FCSUBTYPE": 130380,
+		"AOO": -999999,
+		"HGT": -999999,
+		"LMC": -999999,
+		"PVH": -999999,
+		"ZVH": -999999,
+		"DMBC": 5,
+		"DMBL": -999999,
+		"DMBU": -999999,
+		"DMT": -999999,
+		"SBC": -999999,
+		"SDSC": 5,
+		"SDSL": -999999,
+		"SDSU": -999999,
+		"TRE": -999999,
+		"TSCC": 5,
+		"TSCL": -999999,
+		"TSCU": -999999
+	},
+	"links": [
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa",
+			"rel": "service,"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf",
+			"rel": "collection,"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/schema",
+			"rel": "describedby",
+			"type": "application/xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fgeo%2Bjson",
+			"rel": "self"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fgml%2Bxml",
+			"rel": "alternate",
+			"type": "application/gml+xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fx-bxfs%2Bxml%3B%20version%3D1.0.0",
+			"rel": "alternate",
+			"type": "application/x-bxfs+xml; version=1.0.0"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fgml%2Bxml%3B%20version%3D2.1",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=2.1"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fgml%2Bxml%3B%20version%3D3.1",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=3.1"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fgml%2Bxml%3B%20version%3D3.2",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=3.2"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fgml%2Bxml%3B%20version%3D3.2%3B%20profile%3Dhttp%3A%2F%2Fwww.opengis.net%2Fdef%2Fprofile%2Fogc%2F2.0%2Fgml-sf0",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=3.2; profile=http://www.opengis.net/def/profile/ogc/2.0/gml-sf0"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fgml%2Bxml%3B%20version%3D3.2%3B%20profile%3Dhttp%3A%2F%2Fwww.opengis.net%2Fdef%2Fprofile%2Fogc%2F2.0%2Fgml-sf1",
+			"rel": "alternate",
+			"type": "application/gml+xml; version=3.2; profile=http://www.opengis.net/def/profile/ogc/2.0/gml-sf1"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Frss%2Bxml",
+			"rel": "alternate",
+			"type": "application/rss+xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fatom%2Bxml",
+			"rel": "alternate",
+			"type": "application/atom+xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fvnd.google-earth.kml%2Bxml",
+			"rel": "alternate",
+			"type": "application/vnd.google-earth.kml+xml"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fvnd.google-earth.kmz",
+			"rel": "alternate",
+			"type": "application/vnd.google-earth.kmz"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=text%2Fhtml",
+			"rel": "alternate",
+			"type": "text/html"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fofgj%2Bjson",
+			"rel": "alternate",
+			"type": "application/ofgj+json"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=application%2Fvnd.shp%2Boctet-stream",
+			"rel": "alternate",
+			"type": "application/vnd.shp+octet-stream"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=text%2Fjson",
+			"rel": "alternate",
+			"type": "text/json"
+		},
+		{
+			"href": "https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa/collections/VegetationSrf/items/CWFID.VEGETATIONSRF.0.1?f=text%2Fxml",
+			"rel": "alternate",
+			"type": "text/xml"
+		}
+	]
+}
