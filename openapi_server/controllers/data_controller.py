@@ -38,4 +38,5 @@ def get_features(collection_id, limit=None, bbox=None, datetime=None):  # noqa: 
 
     :rtype: FeatureCollectionGeoJSON
     """
+    
     return {"collectionId": collection_id, "bbox":  bbox, "datetime": datetime, "limit": limit}
