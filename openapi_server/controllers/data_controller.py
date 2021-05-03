@@ -1,6 +1,6 @@
 import connexion
 import six
-
+import json
 from openapi_server.models.exception import Exception  # noqa: E501
 from openapi_server.models.feature_collection_geo_json import FeatureCollectionGeoJSON  # noqa: E501
 from openapi_server.models.feature_geo_json import FeatureGeoJSON  # noqa: E501
@@ -38,5 +38,11 @@ def get_features(collection_id, limit=None, bbox=None, datetime=None):  # noqa: 
 
     :rtype: FeatureCollectionGeoJSON
     """
-    
-    return {"collectionId": collection_id, "bbox":  bbox, "datetime": datetime, "limit": limit}
+    f = open("./openapi_server/data/vegetation.json", "r")
+    featureCollStr = f.read()
+    featureCollDict = json.loads(featureCollStr)
+    featureColl = FeatureCollectionGeoJSON.from_dict(featureCollDict)
+
+    print(featureColl)
+
+    return featureColl
