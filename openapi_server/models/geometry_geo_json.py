@@ -55,6 +55,9 @@ class GeometryGeoJSON(Model):
         self._coordinates = coordinates
         self._geometries = geometries
 
+        if self._type is not None:
+            self.openapi_types["coordinates"] = deriveCoordinateFormat(self._type)
+
     @classmethod
     def from_dict(cls, dikt) -> 'GeometryGeoJSON':
         """Returns the dict as a model
@@ -84,7 +87,7 @@ class GeometryGeoJSON(Model):
         :param type: The type of this GeometryGeoJSON.
         :type type: str
         """
-        allowed_values = ["GeometryCollection"]  # noqa: E501
+        allowed_values = ["GeometryCollection", "Polygon", "Point", "LineString", "MultiLineString", "MulitPolygon", "MultiPoint"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"
@@ -92,6 +95,7 @@ class GeometryGeoJSON(Model):
             )
 
         self._type = type
+        self.openapi_types["coordinates"] = deriveCoordinateFormat(self._type)
 
     @property
     def coordinates(self):
@@ -138,3 +142,21 @@ class GeometryGeoJSON(Model):
             raise ValueError("Invalid value for `geometries`, must not be `None`")  # noqa: E501
 
         self._geometries = geometries
+
+
+def deriveCoordinateFormat(geomTypeStr):
+        if geomTypeStr == "Polygon":
+            return PolygonGeoJSON().openapi_types["coordinates"]
+        elif geomTypeStr == "Point":
+            return PointGeoJSON().openapi_types["coordinates"]
+        elif geomTypeStr == "LineString":
+            return LinestringGeoJSON().openapi_types["coordinates"]
+        elif geomTypeStr == "MultiPolygon":
+            return MultipolygonGeoJSON().openapi_types["coordinates"]
+        elif geomTypeStr == "MulitPoint":
+            return MultipointGeoJSON().openapi_types["coordinates"]
+        elif geomTypeStr == "MultiLineString":
+            return MultilinestringGeoJSON().openapi_types["coordinates"] 
+        else:
+            return GeometryGeoJSON().openapi_types["coordinates"]    
+
