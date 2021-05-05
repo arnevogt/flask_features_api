@@ -19,7 +19,14 @@ def get_feature(collection_id, feature_id):  # noqa: E501
 
     :rtype: FeatureGeoJSON
     """
-    return 'do some magic!'
+    f = open("./openapi_server/data/vegetation_feature.json", "r")
+    featureStr = f.read()
+    featureDict = json.loads(featureStr)
+    feature = FeatureGeoJSON.from_dict(featureDict)
+
+    print(feature)
+
+    return feature
 
 
 def get_features(collection_id, limit=None, bbox=None, datetime=None):  # noqa: E501
