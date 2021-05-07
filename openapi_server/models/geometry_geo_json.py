@@ -153,7 +153,7 @@ def deriveCoordinateFormat(geomTypeStr):
             return LinestringGeoJSON().openapi_types["coordinates"]
         elif geomTypeStr == "MultiPolygon":
             return MultipolygonGeoJSON().openapi_types["coordinates"]
-        elif geomTypeStr == "MulitPoint":
+        elif geomTypeStr == "MultiPoint":
             return MultipointGeoJSON().openapi_types["coordinates"]
         elif geomTypeStr == "MultiLineString":
             return MultilinestringGeoJSON().openapi_types["coordinates"] 
