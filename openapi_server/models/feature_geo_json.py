@@ -64,7 +64,7 @@ class FeatureGeoJSON(Model):
         #ToDo
         #this approach does not work
         #apparently FeatureGeoJSON constructor is called after constructor of GeometryGeoJSON
-        if self._geometry is not None:g
+        if self._geometry is not None:
             if self._geometry.type == "Polygon":
                 self.openapi_types["geometry"] = PolygonGeoJSON
             elif self._geometry.type == "Point":
