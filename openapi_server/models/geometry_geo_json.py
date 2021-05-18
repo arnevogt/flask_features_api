@@ -55,8 +55,10 @@ class GeometryGeoJSON(Model):
         self._coordinates = coordinates
         self._geometries = geometries
 
-        if self._type is not None:
-            self.openapi_types["coordinates"] = deriveCoordinateFormat(self._type)
+        #ToDO
+        #current approach, works but really hacked
+        #if self._type is not None:
+        #    self.openapi_types["coordinates"] = deriveCoordinateFormat(self._type)
 
     @classmethod
     def from_dict(cls, dikt) -> 'GeometryGeoJSON':
@@ -95,7 +97,9 @@ class GeometryGeoJSON(Model):
             )
 
         self._type = type
-        self.openapi_types["coordinates"] = deriveCoordinateFormat(self._type)
+        #ToDO
+        #current approach, works but really hacked
+        #self.openapi_types["coordinates"] = deriveCoordinateFormat(self._type)
 
     @property
     def coordinates(self):

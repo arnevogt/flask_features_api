@@ -26,6 +26,8 @@ def _deserialize(data, klass):
         return deserialize_datetime(data)
     elif typing_utils.is_generic(klass):
         if typing_utils.is_list(klass):
+            if klass == typing.List[float]:
+                return _deserialize_primitive(data,  klass.__args__[0])
             return _deserialize_list(data, klass.__args__[0])
         if typing_utils.is_dict(klass):
             return _deserialize_dict(data, klass.__args__[1])

@@ -7,6 +7,12 @@ from typing import List, Dict  # noqa: F401
 
 from openapi_server.models.base_model_ import Model
 from openapi_server.models.geometry_geo_json import GeometryGeoJSON
+from openapi_server.models.polygon_geo_json import PolygonGeoJSON
+from openapi_server.models.point_geo_json import PointGeoJSON
+from openapi_server.models.linestring_geo_json import LinestringGeoJSON
+from openapi_server.models.multilinestring_geo_json import MultilinestringGeoJSON
+from openapi_server.models.multipoint_geo_json import MultipointGeoJSON
+from openapi_server.models.multipolygon_geo_json import MultipolygonGeoJSON
 from openapi_server.models.link import Link
 from openapi_server import util
 
@@ -54,6 +60,26 @@ class FeatureGeoJSON(Model):
         self._properties = properties
         self._id = id
         self._links = links
+
+        #ToDo
+        #this approach does not work
+        #apparently FeatureGeoJSON constructor is called after constructor of GeometryGeoJSON
+        if self._geometry is not None:
+            if self._geometry.type == "Polygon":
+                self.openapi_types["geometry"] = PolygonGeoJSON
+            elif self._geometry.type == "Point":
+                self.openapi_types["geometry"] = PointGeoJSON
+            elif self._geometry.type == "LineString":
+                self.openapi_types["geometry"] = LinestringGeoJSON
+            elif self._geometry.type == "MultiPolygon":
+                self.openapi_types["geometry"] = MultipolygonGeoJSON
+            elif self._geometry.type == "MultiPoint":
+                self.openapi_types["geometry"] = MultipointGeoJSON
+            elif self._geometry.type == "MultiLineString":
+                self.openapi_types["geometry"] = MultilinestringGeoJSON
+            else:
+                self.openapi_types["geometry"] = GeometryGeoJSON   
+        
 
     @classmethod
     def from_dict(cls, dikt) -> 'FeatureGeoJSON':
@@ -113,6 +139,9 @@ class FeatureGeoJSON(Model):
         """
         if geometry is None:
             raise ValueError("Invalid value for `geometry`, must not be `None`")  # noqa: E501
+
+        #ToDo
+        #geometry type must be set in setter as well 
 
         self._geometry = geometry
 
