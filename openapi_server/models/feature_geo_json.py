@@ -60,25 +60,6 @@ class FeatureGeoJSON(Model):
         self._properties = properties
         self._id = id
         self._links = links
-
-        #ToDo
-        #this approach does not work
-        #apparently FeatureGeoJSON constructor is called after constructor of GeometryGeoJSON
-        if self._geometry is not None:
-            if self._geometry.type == "Polygon":
-                self.openapi_types["geometry"] = PolygonGeoJSON
-            elif self._geometry.type == "Point":
-                self.openapi_types["geometry"] = PointGeoJSON
-            elif self._geometry.type == "LineString":
-                self.openapi_types["geometry"] = LinestringGeoJSON
-            elif self._geometry.type == "MultiPolygon":
-                self.openapi_types["geometry"] = MultipolygonGeoJSON
-            elif self._geometry.type == "MultiPoint":
-                self.openapi_types["geometry"] = MultipointGeoJSON
-            elif self._geometry.type == "MultiLineString":
-                self.openapi_types["geometry"] = MultilinestringGeoJSON
-            else:
-                self.openapi_types["geometry"] = GeometryGeoJSON   
         
 
     @classmethod
