@@ -1,6 +1,7 @@
 import connexion
 import six
 import json
+import openapi_server.backends as backends
 from openapi_server.models.exception import Exception  # noqa: E501
 from openapi_server.models.feature_collection_geo_json import FeatureCollectionGeoJSON  # noqa: E501
 from openapi_server.models.feature_geo_json import FeatureGeoJSON  # noqa: E501
@@ -19,14 +20,23 @@ def get_feature(collection_id, feature_id):  # noqa: E501
 
     :rtype: FeatureGeoJSON
     """
-    f = open("./openapi_server/data/vegetation_feature.json", "r")
-    featureStr = f.read()
-    featureDict = json.loads(featureStr)
-    feature = FeatureGeoJSON.from_dict(featureDict)
+    backend = backends.getDataBackendForCollection(collection_id)
+    responseStr = backend.requestTransformer.getFeature(backend.availableCollections[collection_id], feature_id)
+    
+    responseDict = json.loads(responseStr);
 
-    print(feature)
+    if(responseDict["type"] == "FeatureCollection"): 
+        if len(responseDict["features"]) > 0: #if response is featureCollection return first feature
+            if len(responseDict["features"]) > 1:
+                print("getFeature by ID request returned more than one feature, only return first feature of featureCollection")
+            return responseDict["features"][0]
+        else:
+            return Exception(code= "404", description="no feature found with ID {0} in collection {1}".format(feature_id, collection_id))           
+    elif(responseDict["type"] == "Feature"):
+        return responseDict #simply return single feature
+    else:
+        return Exception(code = 500 , description= "internal error, unknown response type for getFeature by ID request")
 
-    return feature
 
 
 def get_features(collection_id, limit=None, bbox=None, datetime=None):  # noqa: E501
@@ -45,11 +55,7 @@ def get_features(collection_id, limit=None, bbox=None, datetime=None):  # noqa: 
 
     :rtype: FeatureCollectionGeoJSON
     """
-    f = open("./openapi_server/data/vegetation.json", "r")
-    featureCollStr = f.read()
-    featureCollDict = json.loads(featureCollStr)
-    featureColl = FeatureCollectionGeoJSON.from_dict(featureCollDict)
+    backend = backends.getDataBackendForCollection(collection_id)
+    responseStr = backend.requestTransformer.getFeatures(backend.availableCollections[collection_id], bbox = bbox, limit = limit, datetime = datetime)
 
-    print(featureColl)
-
-    return featureColl
+    return json.loads(responseStr)
