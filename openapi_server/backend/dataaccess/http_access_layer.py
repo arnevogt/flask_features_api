@@ -8,7 +8,7 @@ class HTTPAccessLayer:
 
         #handle if baseURL already contains request params
         parsedURL = urlparse(baseURL)
-        print(parsedURL)
+
         url = parsedURL.scheme + "://" + parsedURL.netloc + parsedURL.path
         if parsedURL.query:
             existingQueryParams = parse_qs(parsedURL.query) #dict[str, list[str]]
@@ -17,8 +17,6 @@ class HTTPAccessLayer:
                 existingQueryParams[key] = seperator.join(existingQueryParams[key]) #join list
             urlParams.update(dict(existingQueryParams)) #merge dicts
 
-        r = http.request('GET', url, fields=urlParams)
-        print(r)
-        print(r.status)
+        r = http.request('GET', url, fields= urlParams)
 
         return r.data.decode("utf8")

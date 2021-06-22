@@ -1,0 +1,27 @@
+{
+	"server": {
+		"title": "TB-17 Experiments API Python Server",
+		"description": "TB-17 Experiments API Python Server"
+	},
+	"backends": [
+		{
+			"id": "cuberworxWFS",
+            "type": "WFS",
+			"config": {
+				"baseURL": "https://test.cubewerx.com/cubewerx/cubeserv/demo?datastore=Daraa",
+				"types": {
+					"AgricultureSrf": {
+						"temporalProperty": null
+					},
+					"VegetationSrf": {
+						"temporalProperty": "ZI001_SDV"
+					}
+				}
+			},
+			"collections": [
+				"AgricultureSrf",
+				"VegetationSrf"
+			]
+		}
+	]
+}

@@ -1,3 +1,4 @@
+import collections
 import connexion
 import six
 
@@ -12,6 +13,7 @@ from openapi_server.models.extent_spatial import ExtentSpatial
 from openapi_server.models.extent_temporal import ExtentTemporal
 from openapi_server import util
 from flask import request
+import openapi_server.backends as backends
 
 
 def describe_collection(collection_id):  # noqa: E501
@@ -24,9 +26,19 @@ def describe_collection(collection_id):  # noqa: E501
 
     :rtype: Collection
     """
-    c = getVegetationCollection(request.url, request.url + "/items")
+    backend = backends.getDataBackendForCollection(collection_id)
+    collection = backend.requestTransformer.getCollection(collectionID= collection_id)
+    
+    selfLink = Link(href=request.url, rel="self",
+                    title="describition of " + collection_id + " collection", type="application/json")
+    itemsLink = Link(href=request.url + "items", rel="items",
+                    title="features of " + collection_id + " collection", type="application/json")
+    collectionsLink = selfLink = Link(href=request.url[0,request.url.rindex("/")], rel="data",
+                    title="describition of all collections", type="application/json")
+    
+    collection.links([selfLink, itemsLink, collectionsLink])
 
-    return c
+    return collection
 
 
 def get_collections():  # noqa: E501
@@ -37,11 +49,24 @@ def get_collections():  # noqa: E501
 
     :rtype: Collections
     """
-    selfLink = Link(href=request.url, rel="self",
-                    title="describition of all collections in json", type="application/json")
-    colls = Collections(links=[selfLink], collections=[getVegetationCollection(
-        request.url + "/vegetation", request.url + "/vegetation/items")])
-    return colls
+    allColls = []
+
+    for backend in backends.availableBackends:
+        backendColls = backend.requestTransformer.getCollections(list(backend.availableCollections.values))
+        for coll in backendColls:
+            coll.links(createLinksForCollection(request.url, coll.id()))
+
+        allColls.extend(backendColls)
+
+    selfLink = Link(href=request.url[0,request.url.rindex("/")], rel="data",
+                    title="describition of all collections", type="application/json")
+    landingPageLink = Link(href=request.url[0,request.url.rindex("/")], rel="collections",
+                    title="landing page as json", type="application/json")
+
+    links = [selfLink, landingPageLink]
+    collections = Collections( links= links, collections= allColls)    
+
+    return collections
 
 
 def get_conformance_declaration():  # noqa: E501
@@ -64,7 +89,7 @@ def get_landing_page():  # noqa: E501
     :rtype: LandingPage
     """
     collectionsLink = Link(request.url + "collections", rel="data",
-                           title="information about the feature collections")
+                           title="describition of all collections")
     selfLink = Link(href=request.url, rel="self",
                     type="application/json", title="landing page as json")
     lp = LandingPage("TB-17 Experiments API Python Server",
@@ -73,15 +98,13 @@ def get_landing_page():  # noqa: E501
     return lp
 
 
-def getVegetationCollection(selfUrl, itemsUrl):
-    selfLink = Link(href=selfUrl, rel="self",
-                    title="collection describtion as json", type="application/json")
-    itemsLink = Link(href=itemsUrl, rel="items",
-                     title="vegetation", type="application/geo+json")
-    extentSp = ExtentSpatial(bbox=[[7.01, 50.63, 7.22, 50.78]])
-    extentTemp = ExtentTemporal(interval=[["2010-02-15T12:34:56Z", None]])
-    extent = Extent(spatial=extentSp, temporal=extentTemp)
-    c = Collection(id="vegetation", description="this collection contains vegetation data", links=[
-                   selfLink, itemsLink], extent=extent, title="vegetation")
 
-    return c
+def createLinksForCollection(collectionsUrl, collectionID):
+    collectionsLink = Link(href=collectionsUrl, rel="data",
+                    title="describition of all collections", type="application/json")
+    selfLink = Link(href=collectionsUrl + collectionID, rel="self",
+                    title="describition of " + collectionID + " collection", type="application/json")
+    itemsLink = Link(href=collectionsUrl + collectionID + "/items", rel="items",
+                    title="features of " + collectionID + " collection", type="application/json")
+
+    return [selfLink, itemsLink, collectionsLink]

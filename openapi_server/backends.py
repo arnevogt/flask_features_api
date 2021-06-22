@@ -1,8 +1,17 @@
 from openapi_server.backend.data_backend import BackendType, DataBackend
 
 
-cubewerxWFSConfig = {"baseURL": "https://test.cubewerx.com/cubewerx/cubeserv/demo?datastore=Daraa"}
-cubewerxWFSCollections = {"Agriculture": "AgricultureSrf", "Vegetation": "VegetationSrf"}
+cubewerxWFSConfig = {"baseURL": "https://test.cubewerx.com/cubewerx/cubeserv/demo?datastore=Daraa",
+"types": {
+        "AgricultureSrf": {
+            "temporalProperty": None
+        },
+        "VegetationSrf": {
+            "temporalProperty": "ZI001_SDV"
+        }
+    }
+}
+cubewerxWFSCollections = ["AgricultureSrf", "VegetationSrf"]
 cubewerxWFS = DataBackend(BackendType.WFS, cubewerxWFSCollections, cubewerxWFSConfig)
 
 

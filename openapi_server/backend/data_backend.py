@@ -10,7 +10,7 @@ class BackendType(Enum):
 
 class DataBackend:
 
-    def __init__(self, backendType: BackendType, availableCollections: dict , config: dict):
+    def __init__(self, backendType: BackendType, availableCollections: list , config: dict):
         self.requestTransformer: RequestTransformer 
 
         self.availableCollections = availableCollections
@@ -21,7 +21,7 @@ class DataBackend:
             if "baseURL" not in config:
                 raise ValueError("parameter baseURL is missing in config")
 
-            self.requestTransformer = WFSRequestTransformer(config["baseURL"])
+            self.requestTransformer = WFSRequestTransformer(config)
         else:
             print("unkown backend type")
 
