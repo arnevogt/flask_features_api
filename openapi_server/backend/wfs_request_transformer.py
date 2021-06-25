@@ -65,10 +65,10 @@ class WFSRequestTransformer(RequestTransformer):
 
     def parseWFSCapabilities(self, capabilitiesXML: str, collectionID: str):
         xmlTree = ET.fromstring(capabilitiesXML)
-        featureTypes = xmlTree.findall("FeatureType")
+        featureTypes = xmlTree.findall(".//{*}FeatureType")
 
         for featureType in featureTypes:
-            featurTypeID = featureType.find("Name")
+            featurTypeID = featureType.find(".//{*}Name")
             if featurTypeID.text == collectionID:
-                self.capabilitesTransformer.transform(featureType.text)
+                return self.capabilitesTransformer.transform(ET.tostring(featureType))
             

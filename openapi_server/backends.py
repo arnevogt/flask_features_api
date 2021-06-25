@@ -11,7 +11,7 @@ cubewerxWFSConfig = {"baseURL": "https://test.cubewerx.com/cubewerx/cubeserv/dem
         }
     }
 }
-cubewerxWFSCollections = ["AgricultureSrf", "VegetationSrf"]
+cubewerxWFSCollections = ["cw:AgricultureSrf", "cw:VegetationSrf"]
 cubewerxWFS = DataBackend(BackendType.WFS, cubewerxWFSCollections, cubewerxWFSConfig)
 
 

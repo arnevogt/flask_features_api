@@ -9,28 +9,30 @@ class WFSCapabilitiesToCollectionTransformer(FormatTransformer):
         """
             expects FeatureType xml node from WFS capabilites document as input
         """
+
         featureTypeXML = ET.fromstring(input)
         collection = self.parseFeatureType(featureTypeXML)
 
-        output = input
-        return output
+        return collection
 
 
     
     def parseFeatureType(self, featureTypeXML):
-        id = featureTypeXML.find("Name").text
-        title = featureTypeXML.find("Title").text
-        description = featureTypeXML.find("Abstract").text
-        extent = self.parseBBox(featureTypeXML.find("WGS84BoundingBox"))
+        id = featureTypeXML.find(".//{*}Name").text
+        title = featureTypeXML.find(".//{*}Title").text
+        description = featureTypeXML.find(".//{*}Abstract")
+        if description is not None:
+            description = description.text
+        extent = self.parseBBox(featureTypeXML.find(".//{*}WGS84BoundingBox"))
 
         return Collection(id=id, title=title, description=description, extent= extent)
 
     def parseBBox(self, bboxXML):
-        lower = bboxXML.find("LowerCorner").text
-        upper = bboxXML.find("UpperCorner").text
+        lower = bboxXML.find(".//{*}LowerCorner").text
+        upper = bboxXML.find(".//{*}UpperCorner").text
 
         lowerSplit = lower.split(" ");
         upperSplit = upper.split(" ");
-        extent = [lowerSplit.extend(upperSplit)]
+        lowerSplit.extend(upperSplit)
 
-        return ExtentSpatial(bbox= extent)
+        return ExtentSpatial(bbox= [lowerSplit])

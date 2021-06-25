@@ -31,12 +31,12 @@ def describe_collection(collection_id):  # noqa: E501
     
     selfLink = Link(href=request.url, rel="self",
                     title="describition of " + collection_id + " collection", type="application/json")
-    itemsLink = Link(href=request.url + "items", rel="items",
+    itemsLink = Link(href=request.url + "/" +"items", rel="items",
                     title="features of " + collection_id + " collection", type="application/json")
-    collectionsLink = selfLink = Link(href=request.url[0,request.url.rindex("/")], rel="data",
+    collectionsLink = Link(href=request.url[0 : request.url.rindex("/")], rel="data",
                     title="describition of all collections", type="application/json")
     
-    collection.links([selfLink, itemsLink, collectionsLink])
+    collection.links = [selfLink, itemsLink, collectionsLink]
 
     return collection
 
@@ -52,15 +52,15 @@ def get_collections():  # noqa: E501
     allColls = []
 
     for backend in backends.availableBackends:
-        backendColls = backend.requestTransformer.getCollections(list(backend.availableCollections.values))
+        backendColls = backend.requestTransformer.getCollections(backend.availableCollections)
         for coll in backendColls:
-            coll.links(createLinksForCollection(request.url, coll.id()))
+            coll.links = createLinksForCollection(request.url, coll.id)
 
         allColls.extend(backendColls)
 
-    selfLink = Link(href=request.url[0,request.url.rindex("/")], rel="data",
+    selfLink = Link(href=request.url, rel="self",
                     title="describition of all collections", type="application/json")
-    landingPageLink = Link(href=request.url[0,request.url.rindex("/")], rel="collections",
+    landingPageLink = Link(href=request.url[0 : request.url.rindex("/")], rel="collections",
                     title="landing page as json", type="application/json")
 
     links = [selfLink, landingPageLink]
@@ -102,7 +102,7 @@ def get_landing_page():  # noqa: E501
 def createLinksForCollection(collectionsUrl, collectionID):
     collectionsLink = Link(href=collectionsUrl, rel="data",
                     title="describition of all collections", type="application/json")
-    selfLink = Link(href=collectionsUrl + collectionID, rel="self",
+    selfLink = Link(href=collectionsUrl + "/" + collectionID, rel="self",
                     title="describition of " + collectionID + " collection", type="application/json")
     itemsLink = Link(href=collectionsUrl + collectionID + "/items", rel="items",
                     title="features of " + collectionID + " collection", type="application/json")
