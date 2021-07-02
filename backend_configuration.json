@@ -5,22 +5,18 @@
 	},
 	"backends": [
 		{
-			"id": "cuberworxWFS",
+			"id": "cuberworxWFS_Foundation",
             "type": "WFS",
 			"config": {
-				"baseURL": "https://test.cubewerx.com/cubewerx/cubeserv/demo?datastore=Daraa",
+				"baseURL": "https://test.cubewerx.com/cubewerx/cubeserv/demo?datastore=Foundation",
 				"types": {
-					"AgricultureSrf": {
+					"cw:coastl_1m": {
 						"temporalProperty": null
-					},
-					"VegetationSrf": {
-						"temporalProperty": "ZI001_SDV"
 					}
 				}
 			},
 			"collections": [
-				"AgricultureSrf",
-				"VegetationSrf"
+				"cw:coastl_1m"
 			]
 		}
 	]
