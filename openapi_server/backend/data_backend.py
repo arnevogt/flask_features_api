@@ -10,9 +10,10 @@ class BackendType(Enum):
 
 class DataBackend:
 
-    def __init__(self, backendType: BackendType, availableCollections: list , config: dict):
+    def __init__(self, id: str, backendType: BackendType, availableCollections: list , config: dict):
         self.requestTransformer: RequestTransformer 
 
+        self.id = id
         self.availableCollections = availableCollections
         self.backendType = backendType
         self.config = config

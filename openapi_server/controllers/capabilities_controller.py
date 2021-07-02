@@ -13,7 +13,7 @@ from openapi_server.models.extent_spatial import ExtentSpatial
 from openapi_server.models.extent_temporal import ExtentTemporal
 from openapi_server import util
 from flask import request
-import openapi_server.backends as backends
+import openapi_server.backendConfiguration as backends
 
 
 def describe_collection(collection_id):  # noqa: E501
@@ -51,7 +51,7 @@ def get_collections():  # noqa: E501
     """
     allColls = []
 
-    for backend in backends.availableBackends:
+    for backend in backends.getAvailableDataBackends():
         backendColls = backend.requestTransformer.getCollections(backend.availableCollections)
         for coll in backendColls:
             coll.links = createLinksForCollection(request.url, coll.id)
@@ -60,7 +60,7 @@ def get_collections():  # noqa: E501
 
     selfLink = Link(href=request.url, rel="self",
                     title="describition of all collections", type="application/json")
-    landingPageLink = Link(href=request.url[0 : request.url.rindex("/")], rel="collections",
+    landingPageLink = Link(href=request.url[0 : request.url.rindex("/")], rel="landingpage",
                     title="landing page as json", type="application/json")
 
     links = [selfLink, landingPageLink]
@@ -92,8 +92,8 @@ def get_landing_page():  # noqa: E501
                            title="describition of all collections")
     selfLink = Link(href=request.url, rel="self",
                     type="application/json", title="landing page as json")
-    lp = LandingPage("TB-17 Experiments API Python Server",
-                     "this is a dummy server", [selfLink, collectionsLink])
+    lp = LandingPage(backends.getBackendConfiguration()["server"]["title"],
+                     backends.getBackendConfiguration()["server"]["description"], [selfLink, collectionsLink])
 
     return lp
 
@@ -104,7 +104,7 @@ def createLinksForCollection(collectionsUrl, collectionID):
                     title="describition of all collections", type="application/json")
     selfLink = Link(href=collectionsUrl + "/" + collectionID, rel="self",
                     title="describition of " + collectionID + " collection", type="application/json")
-    itemsLink = Link(href=collectionsUrl + collectionID + "/items", rel="items",
+    itemsLink = Link(href=collectionsUrl + "/" + collectionID + "/items", rel="items",
                     title="features of " + collectionID + " collection", type="application/json")
 
     return [selfLink, itemsLink, collectionsLink]

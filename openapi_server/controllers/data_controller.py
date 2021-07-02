@@ -1,7 +1,7 @@
 import connexion
 import six
 import json
-import openapi_server.backends as backends
+import openapi_server.backendConfiguration as backends
 from openapi_server.models.exception import Exception  # noqa: E501
 from openapi_server.models.feature_collection_geo_json import FeatureCollectionGeoJSON  # noqa: E501
 from openapi_server.models.feature_geo_json import FeatureGeoJSON  # noqa: E501
@@ -21,7 +21,7 @@ def get_feature(collection_id, feature_id):  # noqa: E501
     :rtype: FeatureGeoJSON
     """
     backend = backends.getDataBackendForCollection(collection_id)
-    responseStr = backend.requestTransformer.getFeature(backend.availableCollections[collection_id], feature_id)
+    responseStr = backend.requestTransformer.getFeature(collection_id, feature_id)
     
     responseDict = json.loads(responseStr);
 
@@ -56,7 +56,7 @@ def get_features(collection_id, limit=None, bbox=None, datetime=None):  # noqa: 
     :rtype: FeatureCollectionGeoJSON
     """
     backend = backends.getDataBackendForCollection(collection_id)
-    responseStr = backend.requestTransformer.getFeatures(backend.availableCollections[collection_id], bbox = bbox, limit = limit, datetime = datetime)
+    responseStr = backend.requestTransformer.getFeatures(collection_id, bbox = bbox, limit = limit, datetime = datetime)
 
     print(responseStr)
 

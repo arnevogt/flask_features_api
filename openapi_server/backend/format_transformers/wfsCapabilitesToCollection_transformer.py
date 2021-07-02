@@ -7,7 +7,7 @@ class WFSCapabilitiesToCollectionTransformer(FormatTransformer):
 
     def transform(self, input: str):
         """
-            expects FeatureType xml node from WFS capabilites document as input
+            expects FeatureType xml node as String from WFS capabilites document as input
         """
 
         featureTypeXML = ET.fromstring(input)
