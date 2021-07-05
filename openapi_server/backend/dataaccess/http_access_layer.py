@@ -1,4 +1,5 @@
 import urllib3
+import ssl
 from urllib.parse import urlparse, parse_qs
 
 class HTTPAccessLayer:
@@ -19,4 +20,5 @@ class HTTPAccessLayer:
 
         r = http.request('GET', url, fields= urlParams)
 
-        return r.data.decode("utf8")
+
+        return r.data.decode("utf-8")

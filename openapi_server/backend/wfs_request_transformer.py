@@ -5,7 +5,7 @@ from openapi_server.backend.format_transformers.wfsCapabilitesToCollection_trans
 from openapi_server.backend.request_transformer import RequestTransformer
 from openapi_server.backend.dataaccess.http_access_layer import HTTPAccessLayer
 from openapi_server.backend.query_transformers.wfs_query_transformer import WFSQueryTransformer
-import xml.etree.ElementTree as ET
+from xml.dom import minidom
 
 class WFSRequestTransformer(RequestTransformer):
 
@@ -63,12 +63,12 @@ class WFSRequestTransformer(RequestTransformer):
 
 
 
-    def parseWFSCapabilities(self, capabilitiesXML: str, collectionID: str):
-        xmlTree = ET.fromstring(capabilitiesXML)
-        featureTypes = xmlTree.findall(".//{*}FeatureType")
+    def parseWFSCapabilities(self, capabilitiesXML: str, collectionID: str):       
+        dom = minidom.parseString(capabilitiesXML)
+        featureTypes = dom.getElementsByTagNameNS("*", "FeatureType") #ignore namespace
 
         for featureType in featureTypes:
-            featurTypeID = featureType.find(".//{*}Name")
-            if featurTypeID.text == collectionID:
-                return self.capabilitesTransformer.transform(ET.tostring(featureType))
+            featureTypeID = featureType.getElementsByTagNameNS("*", "Name")
+            if featureTypeID[0].firstChild.data == collectionID: #Name tag occurs only one within each FeatureType tag
+                return self.capabilitesTransformer.transform(featureType.toxml("utf-8")) #as string
             

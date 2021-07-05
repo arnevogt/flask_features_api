@@ -58,6 +58,4 @@ def get_features(collection_id, limit=None, bbox=None, datetime=None):  # noqa: 
     backend = backends.getDataBackendForCollection(collection_id)
     responseStr = backend.requestTransformer.getFeatures(collection_id, bbox = bbox, limit = limit, datetime = datetime)
 
-    print(responseStr)
-
     return json.loads(responseStr)

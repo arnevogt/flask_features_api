@@ -50,7 +50,6 @@ def get_collections():  # noqa: E501
     :rtype: Collections
     """
     allColls = []
-
     for backend in backends.getAvailableDataBackends():
         backendColls = backend.requestTransformer.getCollections(backend.availableCollections)
         for coll in backendColls:
