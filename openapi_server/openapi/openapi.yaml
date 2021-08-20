@@ -2,7 +2,7 @@ openapi: 3.0.2
 info:
   contact:
     email: info@example.org
-    name: Acme Corporation
+    name: example company
     url: http://example.org/
   description: |-
     This is a sample OpenAPI definition that conforms to the conformance
@@ -11,23 +11,11 @@ info:
 
     This example is a generic OGC API Features definition that uses path
     parameters to describe all feature collections and all features.
-    The generic OpenAPI definition does not provide any details on the
-    collections or the feature content. This information is only available
-    from accessing the feature collection resources.
-
-    There is [another example](ogcapi-features-1-example2.yaml)
-    that specifies each collection explicitly.
-  license:
     name: CC-BY 4.0 license
     url: https://creativecommons.org/licenses/by/4.0/
   title: 'A sample API conforming to the draft standard OGC API - Features - Part
     1: Core'
   version: 1.0.0
-servers:
-- description: Production server
-  url: https://data.example.org/
-- description: Development server
-  url: https://dev.example.org/
 tags:
 - description: essential characteristics of this API
   name: Capabilities
@@ -44,36 +32,8 @@ paths:
         "200":
           content:
             application/json:
-              example:
-                title: Buildings in Bonn
-                description: Access to data about buildings in the city of Bonn via
-                  a Web API that conforms to the OGC API Features specification.
-                links:
-                - href: http://data.example.org/
-                  rel: self
-                  type: application/json
-                  title: this document
-                - href: http://data.example.org/api
-                  rel: service-desc
-                  type: application/vnd.oai.openapi+json;version=3.0
-                  title: the API definition
-                - href: http://data.example.org/api.html
-                  rel: service-doc
-                  type: text/html
-                  title: the API documentation
-                - href: http://data.example.org/conformance
-                  rel: conformance
-                  type: application/json
-                  title: OGC API conformance classes implemented by this server
-                - href: http://data.example.org/collections
-                  rel: data
-                  type: application/json
-                  title: Information about the feature collections
               schema:
                 $ref: '#/components/schemas/landingPage'
-            text/html:
-              schema:
-                type: string
           description: |-
             The landing page provides links to the API definition
             (link relations `service-desc` and `service-doc`),
@@ -86,9 +46,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/exception'
-            text/html:
-              schema:
-                type: string
           description: A server error occurred.
       summary: landing page
       tags:
@@ -101,57 +58,6 @@ paths:
         "200":
           content:
             application/json:
-              example:
-                links:
-                - href: http://data.example.org/collections.json
-                  rel: self
-                  type: application/json
-                  title: this document
-                - href: http://data.example.org/collections.html
-                  rel: alternate
-                  type: text/html
-                  title: this document as HTML
-                - href: http://schemas.example.org/1.0/buildings.xsd
-                  rel: describedby
-                  type: application/xml
-                  title: GML application schema for Acme Corporation building data
-                - href: http://download.example.org/buildings.gpkg
-                  rel: enclosure
-                  type: application/geopackage+sqlite3
-                  title: Bulk download (GeoPackage)
-                  length: 472546
-                collections:
-                - id: buildings
-                  title: Buildings
-                  description: Buildings in the city of Bonn.
-                  extent:
-                    spatial:
-                      bbox:
-                      - - 7.01
-                        - 50.63
-                        - 7.22
-                        - 50.78
-                    temporal:
-                      interval:
-                      - - 2010-02-15T12:34:56Z
-                        - null
-                  links:
-                  - href: http://data.example.org/collections/buildings/items
-                    rel: items
-                    type: application/geo+json
-                    title: Buildings
-                  - href: http://data.example.org/collections/buildings/items.html
-                    rel: items
-                    type: text/html
-                    title: Buildings
-                  - href: https://creativecommons.org/publicdomain/zero/1.0/
-                    rel: license
-                    type: text/html
-                    title: CC0-1.0
-                  - href: https://creativecommons.org/publicdomain/zero/1.0/rdf
-                    rel: license
-                    type: application/rdf+xml
-                    title: CC0-1.0
               schema:
                 $ref: '#/components/schemas/collections'
             text/html:
@@ -178,9 +84,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/exception'
-            text/html:
-              schema:
-                type: string
           description: A server error occurred.
       summary: the feature collections in the dataset
       tags:
@@ -202,43 +105,8 @@ paths:
         "200":
           content:
             application/json:
-              example:
-                id: buildings
-                title: Buildings
-                description: Buildings in the city of Bonn.
-                extent:
-                  spatial:
-                    bbox:
-                    - - 7.01
-                      - 50.63
-                      - 7.22
-                      - 50.78
-                  temporal:
-                    interval:
-                    - - 2010-02-15T12:34:56Z
-                      - null
-                links:
-                - href: http://data.example.org/collections/buildings/items
-                  rel: items
-                  type: application/geo+json
-                  title: Buildings
-                - href: http://data.example.org/collections/buildings/items.html
-                  rel: items
-                  type: text/html
-                  title: Buildings
-                - href: https://creativecommons.org/publicdomain/zero/1.0/
-                  rel: license
-                  type: text/html
-                  title: CC0-1.0
-                - href: https://creativecommons.org/publicdomain/zero/1.0/rdf
-                  rel: license
-                  type: application/rdf+xml
-                  title: CC0-1.0
               schema:
                 $ref: '#/components/schemas/collection'
-            text/html:
-              schema:
-                type: string
           description: |-
             Information about the feature collection with id `collectionId`.
 
@@ -260,9 +128,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/exception'
-            text/html:
-              schema:
-                type: string
           description: A server error occurred.
       summary: describe the feature collection with id `collectionId`
       tags:
@@ -370,50 +235,8 @@ paths:
         "200":
           content:
             application/geo+json:
-              example:
-                type: FeatureCollection
-                links:
-                - href: http://data.example.com/collections/buildings/items.json
-                  rel: self
-                  type: application/geo+json
-                  title: this document
-                - href: http://data.example.com/collections/buildings/items.html
-                  rel: alternate
-                  type: text/html
-                  title: this document as HTML
-                - href: http://data.example.com/collections/buildings/items.json&offset=10&limit=2
-                  rel: next
-                  type: application/geo+json
-                  title: next page
-                timeStamp: 2018-04-03T14:52:23Z
-                numberMatched: 123
-                numberReturned: 2
-                features:
-                - type: Feature
-                  id: "123"
-                  geometry:
-                    type: Polygon
-                    coordinates:
-                    - '...'
-                  properties:
-                    function: residential
-                    floors: "2"
-                    lastUpdate: 2015-08-01T12:34:56Z
-                - type: Feature
-                  id: "132"
-                  geometry:
-                    type: Polygon
-                    coordinates:
-                    - '...'
-                  properties:
-                    function: public use
-                    floors: "10"
-                    lastUpdate: 2013-12-03T10:15:37Z
               schema:
                 $ref: '#/components/schemas/featureCollectionGeoJSON'
-            text/html:
-              schema:
-                type: string
           description: |-
             The response is a document consisting of features in the collection.
             The features included in the response are determined by the server
@@ -439,9 +262,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/exception'
-            text/html:
-              schema:
-                type: string
           description: A query parameter has an invalid value.
         "404":
           description: The requested resource does not exist on the server. For example,
@@ -451,9 +271,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/exception'
-            text/html:
-              schema:
-                type: string
           description: A server error occurred.
       summary: fetch features
       tags:
@@ -488,38 +305,8 @@ paths:
         "200":
           content:
             application/geo+json:
-              example:
-                type: Feature
-                links:
-                - href: http://data.example.com/id/building/123
-                  rel: canonical
-                  title: canonical URI of the building
-                - href: http://data.example.com/collections/buildings/items/123.json
-                  rel: self
-                  type: application/geo+json
-                  title: this document
-                - href: http://data.example.com/collections/buildings/items/123.html
-                  rel: alternate
-                  type: text/html
-                  title: this document as HTML
-                - href: http://data.example.com/collections/buildings
-                  rel: collection
-                  type: application/geo+json
-                  title: the collection document
-                id: "123"
-                geometry:
-                  type: Polygon
-                  coordinates:
-                  - '...'
-                properties:
-                  function: residential
-                  floors: "2"
-                  lastUpdate: 2015-08-01T12:34:56Z
               schema:
                 $ref: '#/components/schemas/featureGeoJSON'
-            text/html:
-              schema:
-                type: string
           description: |-
             fetch the feature with id `featureId` in the feature collection
             with id `collectionId`
@@ -531,9 +318,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/exception'
-            text/html:
-              schema:
-                type: string
           description: A server error occurred.
       summary: fetch a single feature
       tags:
@@ -549,17 +333,8 @@ paths:
         "200":
           content:
             application/json:
-              example:
-                conformsTo:
-                - http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core
-                - http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
-                - http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/html
-                - http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
               schema:
                 $ref: '#/components/schemas/confClasses'
-            text/html:
-              schema:
-                type: string
           description: |-
             The URIs of all conformance classes supported by the server.
 
@@ -572,9 +347,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/exception'
-            text/html:
-              schema:
-                type: string
           description: A server error occurred.
       summary: information about specifications that this API conforms to
       tags:
@@ -583,31 +355,11 @@ paths:
 components:
   schemas:
     landingPage:
-      example:
-        description: Access to data about buildings in the city of Bonn via a Web
-          API that conforms to the OGC API Features specification.
-        links:
-        - hreflang: en
-          rel: alternate
-          length: 0
-          href: http://data.example.com/buildings/123
-          type: application/geo+json
-          title: Trierer Strasse 70, 53115 Bonn
-        - hreflang: en
-          rel: alternate
-          length: 0
-          href: http://data.example.com/buildings/123
-          type: application/geo+json
-          title: Trierer Strasse 70, 53115 Bonn
-        title: Buildings in Bonn
       properties:
         title:
-          example: Buildings in Bonn
           title: title
           type: string
         description:
-          example: Access to data about buildings in the city of Bonn via a Web API
-            that conforms to the OGC API Features specification.
           title: description
           type: string
         links:
@@ -620,32 +372,19 @@ components:
       title: landingPage
       type: object
     link:
-      example:
-        hreflang: en
-        rel: alternate
-        length: 0
-        href: http://data.example.com/buildings/123
-        type: application/geo+json
-        title: Trierer Strasse 70, 53115 Bonn
       properties:
         href:
-          example: http://data.example.com/buildings/123
           title: href
           type: string
         rel:
-          example: alternate
           title: rel
           type: string
         type:
-          example: application/geo+json
-          title: type
           type: string
         hreflang:
-          example: en
           title: hreflang
           type: string
         title:
-          example: Trierer Strasse 70, 53115 Bonn
           title: title
           type: string
         length:
@@ -670,10 +409,6 @@ components:
       title: exception
       type: object
     confClasses:
-      example:
-        conformsTo:
-        - conformsTo
-        - conformsTo
       properties:
         conformsTo:
           items:
@@ -685,85 +420,6 @@ components:
       title: confClasses
       type: object
     collections:
-      example:
-        collections:
-        - extent:
-            spatial:
-              crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-              bbox:
-              - - -180
-                - -90
-                - 180
-                - 90
-              - - -180
-                - -90
-                - 180
-                - 90
-            temporal:
-              trs: http://www.opengis.net/def/uom/ISO-8601/0/Gregorian
-              interval:
-              - - 2011-11-11T12:22:11Z
-                - null
-              - - 2011-11-11T12:22:11Z
-                - null
-          itemType: feature
-          crs:
-          - http://www.opengis.net/def/crs/OGC/1.3/CRS84
-          - http://www.opengis.net/def/crs/EPSG/0/4326
-          description: An address.
-          links:
-          - href: http://data.example.com/buildings
-            rel: item
-          - href: http://example.com/concepts/buildings.html
-            rel: describedby
-            type: text/html
-          id: address
-          title: address
-        - extent:
-            spatial:
-              crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-              bbox:
-              - - -180
-                - -90
-                - 180
-                - 90
-              - - -180
-                - -90
-                - 180
-                - 90
-            temporal:
-              trs: http://www.opengis.net/def/uom/ISO-8601/0/Gregorian
-              interval:
-              - - 2011-11-11T12:22:11Z
-                - null
-              - - 2011-11-11T12:22:11Z
-                - null
-          itemType: feature
-          crs:
-          - http://www.opengis.net/def/crs/OGC/1.3/CRS84
-          - http://www.opengis.net/def/crs/EPSG/0/4326
-          description: An address.
-          links:
-          - href: http://data.example.com/buildings
-            rel: item
-          - href: http://example.com/concepts/buildings.html
-            rel: describedby
-            type: text/html
-          id: address
-          title: address
-        links:
-        - hreflang: en
-          rel: alternate
-          length: 0
-          href: http://data.example.com/buildings/123
-          type: application/geo+json
-          title: Trierer Strasse 70, 53115 Bonn
-        - hreflang: en
-          rel: alternate
-          length: 0
-          href: http://data.example.com/buildings/123
-          type: application/geo+json
-          title: Trierer Strasse 70, 53115 Bonn
       properties:
         links:
           items:
@@ -897,57 +553,6 @@ components:
       title: extent
       type: object
     featureCollectionGeoJSON:
-      example:
-        timeStamp: 2017-08-17T08:05:32Z
-        features:
-        - links:
-          - hreflang: en
-            rel: alternate
-            length: 0
-            href: http://data.example.com/buildings/123
-            type: application/geo+json
-            title: Trierer Strasse 70, 53115 Bonn
-          - hreflang: en
-            rel: alternate
-            length: 0
-            href: http://data.example.com/buildings/123
-            type: application/geo+json
-            title: Trierer Strasse 70, 53115 Bonn
-          id: ""
-          type: Feature
-          properties: '{}'
-        - links:
-          - hreflang: en
-            rel: alternate
-            length: 0
-            href: http://data.example.com/buildings/123
-            type: application/geo+json
-            title: Trierer Strasse 70, 53115 Bonn
-          - hreflang: en
-            rel: alternate
-            length: 0
-            href: http://data.example.com/buildings/123
-            type: application/geo+json
-            title: Trierer Strasse 70, 53115 Bonn
-          id: ""
-          type: Feature
-          properties: '{}'
-        numberReturned: 10
-        links:
-        - hreflang: en
-          rel: alternate
-          length: 0
-          href: http://data.example.com/buildings/123
-          type: application/geo+json
-          title: Trierer Strasse 70, 53115 Bonn
-        - hreflang: en
-          rel: alternate
-          length: 0
-          href: http://data.example.com/buildings/123
-          type: application/geo+json
-          title: Trierer Strasse 70, 53115 Bonn
-        type: FeatureCollection
-        numberMatched: 127
       properties:
         type:
           enum:
@@ -998,23 +603,6 @@ components:
       title: featureCollectionGeoJSON
       type: object
     featureGeoJSON:
-      example:
-        links:
-        - hreflang: en
-          rel: alternate
-          length: 0
-          href: http://data.example.com/buildings/123
-          type: application/geo+json
-          title: Trierer Strasse 70, 53115 Bonn
-        - hreflang: en
-          rel: alternate
-          length: 0
-          href: http://data.example.com/buildings/123
-          type: application/geo+json
-          title: Trierer Strasse 70, 53115 Bonn
-        id: ""
-        type: Feature
-        properties: '{}'
       properties:
         type:
           enum:
